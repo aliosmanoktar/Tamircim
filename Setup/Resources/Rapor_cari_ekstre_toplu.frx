@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/18/2018 15:49:47" ReportInfo.Modified="10/16/2018 14:25:20" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGsei1vLGtYNrT4uJJhjdPq1oo1EnYVuc9KuAXn208hjVarpex9KfSZmVsUxM7SlsBTvBfgqR+7L/yr9KXL+wbvHqMPFa+mUu1PcPXndbq0YqLZWeNXm7ExjXDZ5AA7lonDzPglWUPBTd9rQKLBaliiPL96Q1uqyvDJrkQYWbmoYFBTaCQ60abs2ZPF6xlms/zg==">
+      <TableDataSource Name="Table" Alias="sirket_bilgileri" DataType="System.Int32" Enabled="true" SelectCommand="select * from firma">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table3" Alias="cari_islemleri" DataType="System.Int32" Enabled="true" SelectCommand="select * from cari_islemleri">
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+        <Column Name="islem_turu" DataType="System.String" PropName="Column"/>
+        <Column Name="aciklama" DataType="System.String" PropName="Column"/>
+        <Column Name="borc" DataType="System.String" PropName="Column"/>
+        <Column Name="alacak" DataType="System.String" PropName="Column"/>
+        <Column Name="name" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table4" Alias="cari" DataType="System.Int32" Enabled="true" SelectCommand="select * from cari">
+        <Column Name="name" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+        <Column Name="alacak_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="borc_toplam" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="88.3" Width="718.2" Height="141.75">
+      <TableObject Name="table_is_emri" Left="557.55" Top="9.45" Width="160.64" Height="18.89" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column1" Width="80.32"/>
+        <TableColumn Name="Column2" Width="80.32"/>
+        <TableRow Name="Row2" Height="18.89">
+          <TableCell Name="Cell6" Text="Tarih:" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell7" Text="[Date]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text2" Width="538.65" Height="56.7" Text="Cari Ekstre" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt"/>
+      <TextObject Name="Text7" Top="85.05" Width="94.5" Height="18.9" Text="Tarih"/>
+      <TextObject Name="Text8" Left="94.5" Top="85.05" Width="330.75" Height="18.9" Text="[cari.tarih]"/>
+      <TableObject Name="Table2" Top="122.85" Width="718.2" Height="18.9">
+        <TableColumn Name="Column3" Width="113.4"/>
+        <TableColumn Name="Column14" Width="122.85"/>
+        <TableColumn Name="Column4" Width="122.85"/>
+        <TableColumn Name="Column5" Width="207.9"/>
+        <TableColumn Name="Column6"/>
+        <TableColumn Name="Column7" Width="85.05"/>
+        <TableRow Name="Row3">
+          <TableCell Name="Cell8" Border.Lines="Bottom" Text="Tarih"/>
+          <TableCell Name="Cell19" Border.Lines="Bottom" Text="Name"/>
+          <TableCell Name="Cell9" Border.Lines="Bottom" Text="İşlem Türü"/>
+          <TableCell Name="Cell10" Border.Lines="Bottom" Text="Açıklama"/>
+          <TableCell Name="Cell11" Border.Lines="Bottom" Text="Borç"/>
+          <TableCell Name="Cell12" Border.Lines="Bottom" Text="Alacak"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="233.3" Width="718.2" Height="18.9" DataSource="Table3">
+      <TableObject Name="Table2" Width="718.2" Height="18.9">
+        <TableColumn Name="Column13" Width="37.8"/>
+        <TableColumn Name="Column8" Width="75.6"/>
+        <TableColumn Name="Column15" Width="122.85"/>
+        <TableColumn Name="Column9" Width="122.85"/>
+        <TableColumn Name="Column10" Width="207.9"/>
+        <TableColumn Name="Column11"/>
+        <TableColumn Name="Column12" Width="85.05"/>
+        <TableRow Name="Row4">
+          <TableCell Name="Cell18" Border.Lines="Bottom" Text="[Row#]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell13" Border.Lines="Bottom" Text="[cari_islemleri.tarih]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell20" Border.Lines="Bottom" Text="[cari_islemleri.name]" Font="Arial, 8pt"/>
+          <TableCell Name="Cell14" Border.Lines="Bottom" Text="[cari_islemleri.islem_turu]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell15" Border.Lines="Bottom" Text="[cari_islemleri.aciklama]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell16" Border.Lines="Bottom" Text="[cari_islemleri.borc]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell17" Border.Lines="Bottom" Text="[cari_islemleri.alacak]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <DataFooterBand Name="DataFooter1" Top="255.46" Width="718.2" Height="37.8">
+        <TextObject Name="Text9" Left="623.7" Top="9.45" Width="94.5" Height="18.9" Text="[cari.alacak_toplam]" HorzAlign="Right" Font="Arial, 8pt"/>
+        <TextObject Name="Text10" Left="529.2" Top="9.45" Width="94.5" Height="18.9" Text="[cari.borc_toplam]" HorzAlign="Right" Font="Arial, 8pt"/>
+        <TextObject Name="Text3" Top="9.45" Width="529.2" Height="18.9" Text="Toplam" HorzAlign="Center"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="296.51" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

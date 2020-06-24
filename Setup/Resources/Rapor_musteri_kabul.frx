@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2018 10:47:35" ReportInfo.Modified="10/15/2018 17:14:25" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGsei1vLGtYNrT4uJJhjdPq1oo1EnYVuc9KuAXn208hjVarpex9KfSZmVsUxM7SlsBTvBfgqR+7L/yr9KXL+wbvHqMPFa+mUu1PcPXndbq0YqLZWeNXm7ExjXDZ5AA7lonDzPglWUPBTd9rQKLBaliiPL96Q1uqyvDJrkQYWbmoYFZSn71XZblrtiZd45zX98Ww==">
+      <TableDataSource Name="Table" Alias="sirket_bilgileri" DataType="System.Int32" Enabled="true" SelectCommand="select * from data">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="sirket_sahibi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="is_emri" DataType="System.Int32" PropName="Table3" Enabled="true" SelectCommand="select * from exe">
+        <Column Name="tarih" DataType="System.DateTime" PropName="Column"/>
+        <Column Name="is_emri_id" DataType="System.Int32" PropName="Column"/>
+        <Column Name="musteri_name" DataType="System.String" PropName="Column"/>
+        <Column Name="musteri_adres" DataType="System.String" PropName="Column"/>
+        <Column Name="musteri_tel" DataType="System.String" PropName="Column"/>
+        <Column Name="arac_marka" DataType="System.String" PropName="Column"/>
+        <Column Name="sasi_no" DataType="System.String" PropName="Column"/>
+        <Column Name="arac_plaka" DataType="System.String" PropName="Column"/>
+        <Column Name="toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="not" DataType="System.String" PropName="Column"/>
+        <Column Name="emanet" DataType="System.String" PropName="Column"/>
+        <Column Name="km" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table5" Alias="arac_ariza" DataType="System.Int32" Enabled="true" SelectCommand="select * from">
+        <Column Name="gnl_bakim" DataType="System.String" PropName="Column"/>
+        <Column Name="motor" DataType="System.String" PropName="Column"/>
+        <Column Name="sanziman" DataType="System.String" PropName="Column1"/>
+        <Column Name="on_duzen" DataType="System.String" PropName="Column2"/>
+        <Column Name="arka_duzen" DataType="System.String" PropName="Column3"/>
+        <Column Name="frenler" DataType="System.String" PropName="Column4"/>
+        <Column Name="elektrik_sistemi" DataType="System.String" PropName="Column5"/>
+        <Column Name="klima" DataType="System.String" PropName="Column"/>
+        <Column Name="karoser" DataType="System.String" PropName="Column1"/>
+        <Column Name="diger" DataType="System.String" PropName="Column2"/>
+        <Column Name="not" DataType="System.String" PropName="Column3"/>
+      </TableDataSource>
+      <TableDataSource Name="Table2" Alias="arizalar" DataType="System.Int32" Enabled="true" SelectCommand="select * from arizalar&#13;&#10;">
+        <Column Name="name" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="Parameter" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Guides="737.1,718.2">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="614.25">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+      <TableObject Name="table_is_emri" Left="557.55" Top="94.5" Width="160.64" Height="37.79" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column1" Width="80.32"/>
+        <TableColumn Name="Column2" Width="80.32"/>
+        <TableRow Name="Row1">
+          <TableCell Name="Cell1" Text="İş Emri NO:" HorzAlign="Right"/>
+          <TableCell Name="Cell2" Text="[is_emri.is_emri_id]"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="18.89">
+          <TableCell Name="Cell6" Text="Tarih:" HorzAlign="Right"/>
+          <TableCell Name="Cell7" Text="[Date]" Format="Date" Format.Format="d"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text7" Left="-18.9" Top="103.95" Width="576.45" Height="28.35" Fill.Color="White" Text="Onarım Ve Periyodik Bakım Emri" HorzAlign="Center" Font="Arial, 16pt, style=Bold"/>
+      <TableObject Name="Table4" Top="141.75" Width="718.2" Height="185.22" Fill.Color="White">
+        <TableColumn Name="Column3" Width="132.3"/>
+        <TableColumn Name="Column4" Width="226.8"/>
+        <TableColumn Name="Column6" Width="141.75"/>
+        <TableColumn Name="Column7" Width="217.35"/>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell8" Border.Lines="All" Text="Müşteri Adı Soyadı:"/>
+          <TableCell Name="Cell9" Border.Lines="All" Text="[is_emri.musteri_name]"/>
+          <TableCell Name="Cell11" Border.Lines="All" Text="Araç Marka/Model:"/>
+          <TableCell Name="Cell12" Border.Lines="All" Text="[is_emri.arac_marka]"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="22.68">
+          <TableCell Name="Cell13" Border.Lines="All" Text="Adresi:"/>
+          <TableCell Name="Cell14" Border.Lines="All" Text="[is_emri.musteri_adres]"/>
+          <TableCell Name="Cell16" Border.Lines="All" Text="Şasi No:"/>
+          <TableCell Name="Cell17" Border.Lines="All" Text="[is_emri.sasi_no]"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell18" Border.Lines="All" Text="GSM/Tel:"/>
+          <TableCell Name="Cell19" Border.Lines="All" Text="[is_emri.musteri_tel]"/>
+          <TableCell Name="Cell21" Border.Lines="All" Text="Araç Plaka:"/>
+          <TableCell Name="Cell22" Border.Lines="All" Text="[is_emri.arac_plaka]"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.68">
+          <TableCell Name="Cell23" Border.Lines="All" Text="Araç Geliş Tarihi:"/>
+          <TableCell Name="Cell24" Border.Lines="All" Text="[is_emri.tarih]" Format="Date" Format.Format="d"/>
+          <TableCell Name="Cell26" Border.Lines="Right" Text="Km:&#13;&#10;"/>
+          <TableCell Name="Cell27" Border.Lines="Right" Text="[is_emri.km]"/>
+        </TableRow>
+        <TableRow Name="Row19" Height="56.7">
+          <TableCell Name="Cell90" Border.Lines="All" Text="Açıklama:" VertAlign="Center"/>
+          <TableCell Name="Cell91" Border.Lines="All" Text="[is_emri.not]" ColSpan="3"/>
+          <TableCell Name="Cell92" Border.Lines="All"/>
+          <TableCell Name="Cell93" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row42" Height="37.8">
+          <TableCell Name="Cell184" Border.Lines="All" Text="Emanetler:" VertAlign="Center"/>
+          <TableCell Name="Cell185" Border.Lines="All" Text="[is_emri.emanet]" ColSpan="3"/>
+          <TableCell Name="Cell186" Border.Lines="All"/>
+          <TableCell Name="Cell187" Border.Lines="All"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table1" Top="359.1" Width="718.2" Height="245.7" Border.Lines="All">
+        <TableColumn Name="Column18" Width="132.3"/>
+        <TableColumn Name="Column19" MaxWidth="756" Width="585.9"/>
+        <TableRow Name="Row20" Height="22.68">
+          <TableCell Name="Cell94" Border.Lines="All" Text="Müşteri Şikayetleri" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell95" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row21" Height="22.68">
+          <TableCell Name="Cell99" Border.Lines="All" Text="Genel Bakım"/>
+          <TableCell Name="Cell100" Border.Lines="All" Text="[arac_ariza.gnl_bakim]"/>
+        </TableRow>
+        <TableRow Name="Row22" Height="22.68">
+          <TableCell Name="Cell104" Border.Lines="All" Text="Motor"/>
+          <TableCell Name="Cell105" Border.Lines="All" Text="[arac_ariza.motor]"/>
+        </TableRow>
+        <TableRow Name="Row23" Height="22.68">
+          <TableCell Name="Cell109" Border.Lines="All" Text="Şanzıman"/>
+          <TableCell Name="Cell110" Border.Lines="All" Text="[arac_ariza.sanziman]"/>
+        </TableRow>
+        <TableRow Name="Row24" Height="22.68">
+          <TableCell Name="Cell114" Border.Lines="All" Text="Ön Düzen"/>
+          <TableCell Name="Cell115" Border.Lines="All" Text="[arac_ariza.on_duzen]"/>
+        </TableRow>
+        <TableRow Name="Row25">
+          <TableCell Name="Cell116" Border.Lines="All" Text="Arka Düzen"/>
+          <TableCell Name="Cell117" Border.Lines="All" Text="[arac_ariza.arka_duzen]"/>
+        </TableRow>
+        <TableRow Name="Row26">
+          <TableCell Name="Cell118" Border.Lines="All" Text="Frenler"/>
+          <TableCell Name="Cell119" Border.Lines="All" Text="[arac_ariza.frenler]"/>
+        </TableRow>
+        <TableRow Name="Row27">
+          <TableCell Name="Cell120" Border.Lines="All" Text="Elektrik Sistemi"/>
+          <TableCell Name="Cell121" Border.Lines="All" Text="[arac_ariza.elektrik_sistemi]"/>
+        </TableRow>
+        <TableRow Name="Row28">
+          <TableCell Name="Cell122" Border.Lines="All" Text="Klima"/>
+          <TableCell Name="Cell123" Border.Lines="All" Text="[arac_ariza.klima]"/>
+        </TableRow>
+        <TableRow Name="Row29">
+          <TableCell Name="Cell124" Border.Lines="All" Text="Karoser"/>
+          <TableCell Name="Cell125" Border.Lines="All" Text="[arac_ariza.karoser]"/>
+        </TableRow>
+        <TableRow Name="Row30">
+          <TableCell Name="Cell126" Border.Lines="All" Text="Diğer"/>
+          <TableCell Name="Cell127" Border.Lines="All" Text="[arac_ariza.diger]"/>
+        </TableRow>
+        <TableRow Name="Row31">
+          <TableCell Name="Cell128" Border.Lines="All" Text="Not"/>
+          <TableCell Name="Cell129" Text="[arac_ariza.not]"/>
+        </TableRow>
+      </TableObject>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="617.5" Width="718.2"/>
+    <DataBand Name="Data2" Top="686.43" Width="718.2" Height="24.62" Guides="0" DataSource="Table2">
+      <TableObject Name="Table6" Width="717.26" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column31" Width="40.94"/>
+        <TableColumn Name="Column32" Width="122.09"/>
+        <TableColumn Name="Column33" Width="337.55"/>
+        <TableColumn Name="Column34" Width="74.18"/>
+        <TableColumn Name="Column35" Width="71.06"/>
+        <TableColumn Name="Column36" Width="71.44"/>
+        <TableRow Name="Row36" Height="23.62">
+          <TableCell Name="Cell152" Border.Lines="Left, Right, Top" Text="[Row#]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell153" Border.Lines="Right" Text="[arizalar.name]" VertAlign="Center" Font="Arial, 8pt" ColSpan="5"/>
+          <TableCell Name="Cell154" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell155" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell156" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell157" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row37" Height="1">
+          <TableCell Name="Cell158"/>
+          <TableCell Name="Cell159"/>
+          <TableCell Name="Cell160"/>
+          <TableCell Name="Cell161"/>
+          <TableCell Name="Cell162"/>
+          <TableCell Name="Cell163"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="620.75" Width="718.2" Height="62.42">
+        <TableObject Name="Table6" Top="37.8" Width="717.05" Height="24.62" Border.Lines="All">
+          <TableColumn Name="Column37" Width="170.23"/>
+          <TableColumn Name="Column38" Width="136.97"/>
+          <TableColumn Name="Column39" Width="136.97"/>
+          <TableColumn Name="Column40" Width="136.97"/>
+          <TableColumn Name="Column41" Width="135.91"/>
+          <TableRow Name="Row38" Height="23.62">
+            <TableCell Name="Cell164" Border.Lines="Right" Text="Tespit Edilen Arızalar" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="5"/>
+            <TableCell Name="Cell165" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+            <TableCell Name="Cell166" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+            <TableCell Name="Cell167" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+            <TableCell Name="Cell168" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+          </TableRow>
+          <TableRow Name="Row39" Height="1">
+            <TableCell Name="Cell169"/>
+            <TableCell Name="Cell170"/>
+            <TableCell Name="Cell171"/>
+            <TableCell Name="Cell172"/>
+            <TableCell Name="Cell173"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="714.3" Width="718.2" Height="18.9" CanGrow="true"/>
+  </ReportPage>
+</Report>

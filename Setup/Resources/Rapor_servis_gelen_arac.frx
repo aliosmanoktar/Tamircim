@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/18/2018 15:49:47" ReportInfo.Modified="10/17/2018 13:04:38" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGsei1vLGtYNrT4uJJhjdPq1oo1EnYVuc9KuAXn208hjVarpex9KfSZmVsUxM7SlsBTvBfgqR+7L/yr9KXL+wbvHqMPFa+mUu1PcPXndbq0YqLZWeNXm7ExjXDZ5AA7lonDzPglWUPBTd9rQKLBaliiPL96Q1uqyvDJrkQYWbmoYFeRHeFE47ZmjlgfWyADm3rw==">
+      <TableDataSource Name="Table" Alias="sirket_bilgileri" DataType="System.Int32" Enabled="true" SelectCommand="select * from firma">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table3" Alias="servis_islemleri" DataType="System.Int32" Enabled="true" SelectCommand="select * from cari_islemleri">
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+        <Column Name="islem_turu" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="aciklama" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="borc" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="alacak" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="name" DataType="System.String" PropName="Column"/>
+        <Column Name="plaka" DataType="System.String" PropName="Column"/>
+        <Column Name="marka" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="kdv_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="iscilik_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="parca_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="gnl_toplam" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table4" Alias="servis" DataType="System.Int32" Enabled="true" SelectCommand="select * from cari">
+        <Column Name="name" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+        <Column Name="kdv_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="iscilik_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="parca_toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="gnl_toplam" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="88.3" Width="718.2" Height="141.75">
+      <TableObject Name="table_is_emri" Left="557.55" Top="9.45" Width="160.64" Height="18.89" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column1" Width="80.32"/>
+        <TableColumn Name="Column2" Width="80.32"/>
+        <TableRow Name="Row2" Height="18.89">
+          <TableCell Name="Cell6" Text="Tarih:" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell7" Text="[Date]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text2" Width="538.65" Height="56.7" Text="Servis Gelen Araç Raporu" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt"/>
+      <TextObject Name="Text7" Top="66.15" Width="94.5" Height="18.9" Text="Tarih"/>
+      <TextObject Name="Text8" Left="94.5" Top="66.15" Width="330.75" Height="18.9" Text="[servis.tarih]"/>
+      <TableObject Name="Table2" Top="122.85" Width="718.2" Height="18.9">
+        <TableColumn Name="Column3" Width="75.6"/>
+        <TableColumn Name="Column4" Width="103.95"/>
+        <TableColumn Name="Column5"/>
+        <TableColumn Name="Column6" Width="85.05"/>
+        <TableColumn Name="Column7" Width="75.6"/>
+        <TableColumn Name="Column14" Width="75.6"/>
+        <TableColumn Name="Column15" Width="75.6"/>
+        <TableColumn Name="Column16" Width="75.6"/>
+        <TableColumn Name="Column17" Width="85.05"/>
+        <TableRow Name="Row3">
+          <TableCell Name="Cell8" Border.Lines="Bottom" Text="Tarih" Font="Arial, 8pt"/>
+          <TableCell Name="Cell9" Border.Lines="Bottom" Text="Müşteri" Font="Arial, 8pt"/>
+          <TableCell Name="Cell10" Border.Lines="Bottom" Text="Plaka" Font="Arial, 8pt"/>
+          <TableCell Name="Cell11" Border.Lines="Bottom" Text="Marka/Model" Font="Arial, 8pt"/>
+          <TableCell Name="Cell12" Border.Lines="Bottom" Text="Telefon" Font="Arial, 8pt"/>
+          <TableCell Name="Cell19" Border.Lines="Bottom" Text="KDV Toplam" Font="Arial, 8pt"/>
+          <TableCell Name="Cell20" Border.Lines="Bottom" Text="İşçilik Toplam" Font="Arial, 8pt"/>
+          <TableCell Name="Cell21" Border.Lines="Bottom" Text="Parça Toplam" Font="Arial, 8pt"/>
+          <TableCell Name="Cell22" Border.Lines="Bottom" Text="Genel Toplam" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="233.3" Width="718.2" Height="18.9">
+      <TableObject Name="Table2" Width="718.2" Height="18.9">
+        <TableColumn Name="Column13" Width="28.35"/>
+        <TableColumn Name="Column8" Width="47.25"/>
+        <TableColumn Name="Column9" Width="103.95"/>
+        <TableColumn Name="Column10"/>
+        <TableColumn Name="Column11" Width="85.05"/>
+        <TableColumn Name="Column12" Width="75.6"/>
+        <TableColumn Name="Column18" Width="75.6"/>
+        <TableColumn Name="Column19" Width="75.6"/>
+        <TableColumn Name="Column20" Width="75.6"/>
+        <TableColumn Name="Column21" Width="85.05"/>
+        <TableRow Name="Row4">
+          <TableCell Name="Cell18" Border.Lines="Bottom" Text="[Row#]" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell13" Border.Lines="Bottom" Text="[servis_islemleri.tarih]" VertAlign="Center" Font="Arial, 5pt"/>
+          <TableCell Name="Cell14" Border.Lines="Bottom" Text="[servis_islemleri.name]" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell15" Border.Lines="Bottom" Text="[servis_islemleri.plaka]" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell16" Border.Lines="Bottom" Text="[servis_islemleri.marka]" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell17" Border.Lines="Bottom" Text="[servis_islemleri.telefon]" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell23" Border.Lines="Bottom" Text="[servis_islemleri.kdv_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell24" Border.Lines="Bottom" Text="[servis_islemleri.iscilik_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell25" Border.Lines="Bottom" Text="[servis_islemleri.parca_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 6pt"/>
+          <TableCell Name="Cell26" Border.Lines="Bottom" Text="[servis_islemleri.gnl_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 6pt"/>
+        </TableRow>
+      </TableObject>
+      <DataFooterBand Name="DataFooter1" Top="255.46" Width="718.2" Height="37.8">
+        <TextObject Name="Text9" Left="633.15" Top="9.45" Width="85.05" Height="18.9" Text="[servis.gnl_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text10" Left="557.55" Top="9.45" Width="75.6" Height="18.9" Text="[servis.parca_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text3" Left="302.4" Top="9.45" Width="94.5" Height="18.9" Text="Toplam : " HorzAlign="Right"/>
+        <TextObject Name="Text11" Left="481.95" Top="9.45" Width="75.6" Height="18.9" Text="[servis.iscilik_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text12" Left="406.35" Top="9.45" Width="75.6" Height="18.9" Text="[servis.kdv_toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="296.51" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

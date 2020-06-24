@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/18/2018 15:49:47" ReportInfo.Modified="10/16/2018 13:01:25" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGsei1vLGtYNrT4uJJhjdPq1oo1EnYVuc9KuAXn208hjVarpex9KfSZmVsUxM7SlsBTvBfgqR+7L/yr9KXL+wbvHqMPFa+mUu1PcPXndbq0YqLZWeNXm7ExjXDZ5AA7lonDzPglWUPBTd9rQKLBaliiPL96Q1uqyvDJrkQYWbmoYFr2jCImMT5pdH1xiXGrQlCw==">
+      <TableDataSource Name="Table" Alias="sirket_bilgileri" DataType="System.Int32" Enabled="true" SelectCommand="select * from firma">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="cariler" DataType="System.Int32" Enabled="true" SelectCommand="select * from musteriler">
+        <Column Name="kod" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="unvan" DataType="System.String" PropName="Column1"/>
+        <Column Name="adres" DataType="System.String" PropName="Column2"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column3"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="88.3" Width="718.2" Height="100.22">
+      <TableObject Name="table_is_emri" Left="557.55" Top="9.45" Width="160.64" Height="18.89" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column1" Width="80.32"/>
+        <TableColumn Name="Column2" Width="80.32"/>
+        <TableRow Name="Row2" Height="18.89">
+          <TableCell Name="Cell6" Text="Tarih:" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell7" Text="[Date]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table4" Top="75.6" Width="717.25" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column13" Width="124.17"/>
+        <TableColumn Name="Column14" Width="194.86"/>
+        <TableColumn Name="Column15" Width="289.36"/>
+        <TableColumn Name="Column16" Width="108.86"/>
+        <TableRow Name="Row12" Height="23.62">
+          <TableCell Name="Cell53" Border.Lines="Right" Text="Ünvan" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" ColSpan="2" RowSpan="2"/>
+          <TableCell Name="Cell54" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell55" Border.Lines="Right" Text="Adres" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell56" Border.Lines="Right" Text="Telefon" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="1">
+          <TableCell Name="Cell58"/>
+          <TableCell Name="Cell59"/>
+          <TableCell Name="Cell60"/>
+          <TableCell Name="Cell61"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text2" Width="538.65" Height="56.7" Text="Cari Listesi" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="191.77" Width="718.2" Height="24.62" DataSource="Table1">
+      <TableObject Name="Table5" Width="717.44" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column23" Width="28.35"/>
+        <TableColumn Name="Column18" Width="96.01"/>
+        <TableColumn Name="Column19" Width="195.05"/>
+        <TableColumn Name="Column20" Width="289.17"/>
+        <TableColumn Name="Column21" Width="108.86"/>
+        <TableRow Name="Row14" Height="23.62">
+          <TableCell Name="Cell73" Border.Lines="Right" Text="[Row#]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell63" Border.Lines="Right" Text="[cariler.unvan]" VertAlign="Center" Font="Arial, 8pt" ColSpan="2"/>
+          <TableCell Name="Cell64" Border.Lines="Right" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell65" Border.Lines="Right" Text="[cariler.adres]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell66" Border.Lines="Right" Text="[cariler.telefon]" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="1">
+          <TableCell Name="Cell74"/>
+          <TableCell Name="Cell68"/>
+          <TableCell Name="Cell69"/>
+          <TableCell Name="Cell70"/>
+          <TableCell Name="Cell71"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="219.65" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

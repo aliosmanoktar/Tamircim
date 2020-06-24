@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tamircim", "Tamircim\Tamircim.csproj", "{5B46B93A-269C-4ED7-A511-C68116E0E601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setup", "..\Tamircim\Setup\Setup.csproj", "{4460C96E-A1FB-4EDA-94A5-95E5FD3E621D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B46B93A-269C-4ED7-A511-C68116E0E601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B46B93A-269C-4ED7-A511-C68116E0E601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B46B93A-269C-4ED7-A511-C68116E0E601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B46B93A-269C-4ED7-A511-C68116E0E601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4460C96E-A1FB-4EDA-94A5-95E5FD3E621D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4460C96E-A1FB-4EDA-94A5-95E5FD3E621D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4460C96E-A1FB-4EDA-94A5-95E5FD3E621D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4460C96E-A1FB-4EDA-94A5-95E5FD3E621D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80E00C0C-7C87-4C07-83CB-372E6FBE04B7}
+	EndGlobalSection
+EndGlobal

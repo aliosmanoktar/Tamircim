@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/18/2018 15:22:37" ReportInfo.Modified="10/17/2018 14:57:11" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGsei1vLGtYNrT4uJJhjdPq1oo1EnYVuc9KuAXn208hjVarpex9KfSZmVsUxM7SlsBTvBfgqR+7L/yr9KXL+wbvHqMPFa+mUu1PcPXndbq0YqLZWeNXm7ExjXDZ5AA7lonDzPglWUPBTd9rQKLBaliiPL96Q1uqyvDJrkQYWbmoYFJFJUtoTx8UDl405kbTR7jw==">
+      <TableDataSource Name="Table" Alias="sirket_bilgieleri" DataType="System.Int32" Enabled="true" SelectCommand="select * from sirket_bilgileri">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table2" Alias="personel" DataType="System.Int32" Enabled="true" SelectCommand="select * from personel">
+        <Column Name="personel_name" DataType="System.String" PropName="Column"/>
+        <Column Name="aldigi_ucret" DataType="System.Decimal" PropName="Column"/>
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+        <Column Name="odeme_tipi" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="Table5" Alias="toplam" DataType="System.Int32" Enabled="true" SelectCommand="select * from toplam&#13;&#10;">
+        <Column Name="Toplam" DataType="System.String" PropName="Column"/>
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text7" Left="-9450" Top="-9450" Width="94.5" Height="18.9" Text="Tarih"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="88.3" Width="718.2" Height="141.8" Guides="0">
+      <TableObject Name="Table4" Top="117.18" Width="718.22" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column13" Width="251.75"/>
+        <TableColumn Name="Column14" Width="142.89"/>
+        <TableColumn Name="Column15" Width="152.34"/>
+        <TableColumn Name="Column16" Width="171.24"/>
+        <TableRow Name="Row12" Height="23.62">
+          <TableCell Name="Cell53" Border.Lines="Right" Text="Personel Adı" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell54" Border.Lines="Right" Text="Aldığı Ücret" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell55" Border.Lines="Right" Text="Tarih" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell56" Border.Lines="Right" Text="Açıklama" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="1">
+          <TableCell Name="Cell58"/>
+          <TableCell Name="Cell59"/>
+          <TableCell Name="Cell60"/>
+          <TableCell Name="Cell61"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text2" Left="9.45" Width="538.65" Height="56.7" Text="Personel Ücret Raporu" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt"/>
+      <TableObject Name="table_is_emri" Left="576.45" Top="9.46" Width="146.46" Height="18.89" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column1" Width="56.7"/>
+        <TableColumn Name="Column2" Width="89.76"/>
+        <TableRow Name="Row2" Height="18.89">
+          <TableCell Name="Cell6" Text="Tarih:" HorzAlign="Right"/>
+          <TableCell Name="Cell7" Text="[Date]" Format="Date" Format.Format="d"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text9" Left="9.45" Top="75.6" Width="94.5" Height="18.9" Text="Tarih"/>
+      <TextObject Name="Text10" Left="113.4" Top="75.6" Width="330.75" Height="18.9" Text="[toplam.tarih]"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="233.35" Width="718.2" Height="24.62" DataSource="Table2">
+      <TableObject Name="Table1" Width="718.22" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column21" Width="47.25"/>
+        <TableColumn Name="Column17" Width="204.5"/>
+        <TableColumn Name="Column18" Width="142.89"/>
+        <TableColumn Name="Column19" Width="152.34"/>
+        <TableColumn Name="Column20" Width="171.24"/>
+        <TableRow Name="Row14" Height="23.62">
+          <TableCell Name="Cell70" Border.Lines="Right" Text="[Row#]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell62" Border.Lines="Right" Text="[personel.personel_name]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell63" Border.Lines="Right" Text="[personel.aldigi_ucret]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell64" Border.Lines="Right" Text="[personel.tarih]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell65" Border.Lines="Right" Text="[personel.odeme_tipi]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="1">
+          <TableCell Name="Cell71"/>
+          <TableCell Name="Cell66"/>
+          <TableCell Name="Cell67"/>
+          <TableCell Name="Cell68"/>
+          <TableCell Name="Cell69"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="261.23" Width="718.2" Height="37.8">
+      <TableObject Name="Table3" Left="415.8" Width="297.63" Height="18.89" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column22" Width="132.29"/>
+        <TableColumn Name="Column23" Width="165.34"/>
+        <TableRow Name="Row16" Height="18.89">
+          <TableCell Name="Cell72" Text="Genel Toplam:" HorzAlign="Right"/>
+          <TableCell Name="Cell73" Text="[toplam.Toplam]" Format="Date" Format.Format="d"/>
+        </TableRow>
+      </TableObject>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

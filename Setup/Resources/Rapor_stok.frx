@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/03/2019 15:16:47" ReportInfo.Modified="02/03/2019 16:25:34" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqLrsFCkq0pbnlrNLcvFVkCVz36UnLxRHvgKV5wrWz7Lvg1IFOQ9D9BrCqMoSCZSFsH4ojIy4nLXCN88PM+DUOuI0OzfGIQHMJPhtVMNqtlSG3BfpPatnrQVr91HI8qUh3dD8AYiq4uvxnq/FIfd6+dAHLHfDn20tebyHPcdvcV/Q=">
+      <TableDataSource Name="Table" Alias="sirket_bilgileri" DataType="System.Int32" Enabled="true" SelectCommand="select * from">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column1"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="stok_durum" DataType="System.Int32" Enabled="true" SelectCommand="select * from">
+        <Column Name="stok_kodu" DataType="System.String" PropName="Column"/>
+        <Column Name="adi" DataType="System.String" PropName="Column"/>
+        <Column Name="birim" DataType="System.String" PropName="Column"/>
+        <Column Name="kdv" DataType="System.String" PropName="Column"/>
+        <Column Name="fiyat" DataType="System.String" PropName="Column"/>
+        <Column Name="Stok" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="89.05" Width="718.2" Height="100.22">
+      <TextObject Name="Text2" Width="538.65" Height="56.7" Text="Stok Listesi" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt"/>
+      <TableObject Name="table_is_emri" Left="557.55" Top="9.45" Width="160.64" Height="18.89" Fill.Color="White" CanBreak="false">
+        <TableColumn Name="Column1" Width="80.32"/>
+        <TableColumn Name="Column2" Width="80.32"/>
+        <TableRow Name="Row2" Height="18.89">
+          <TableCell Name="Cell6" Text="Tarih:" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell7" Text="[Date]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table4" Top="75.6" Width="721.98" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column13" Width="155.74"/>
+        <TableColumn Name="Column15" Width="241.54"/>
+        <TableColumn Name="Column16" Width="127.39"/>
+        <TableColumn Name="Column17" Width="65.77"/>
+        <TableColumn Name="Column18" Width="65.77"/>
+        <TableColumn Name="Column19" Width="65.77"/>
+        <TableRow Name="Row12" Height="23.62">
+          <TableCell Name="Cell53" Border.Lines="Right" Text="Stok Kodu" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" RowSpan="2"/>
+          <TableCell Name="Cell55" Border.Lines="Right" Text="Adı" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell56" Border.Lines="Right" Text="Birim" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell62" Border.Lines="Left, Right, Top" Text="KDV" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell64" Border.Lines="Left, Right, Top" Text="Fiyat" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell66" Border.Lines="Left, Right, Top" Text="Stok" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="1">
+          <TableCell Name="Cell58"/>
+          <TableCell Name="Cell60"/>
+          <TableCell Name="Cell61"/>
+          <TableCell Name="Cell63"/>
+          <TableCell Name="Cell65"/>
+          <TableCell Name="Cell67"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="193.27" Width="718.2" Height="24.62" DataSource="Table1">
+      <TableObject Name="Table5" Width="722.16" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column27" Width="30.71"/>
+        <TableColumn Name="Column20" Width="123.83"/>
+        <TableColumn Name="Column21" Width="1"/>
+        <TableColumn Name="Column22" Width="241.77"/>
+        <TableColumn Name="Column23" Width="127.42"/>
+        <TableColumn Name="Column24" Width="65.81"/>
+        <TableColumn Name="Column25" Width="65.81"/>
+        <TableColumn Name="Column26" Width="65.81"/>
+        <TableRow Name="Row14" Height="23.62">
+          <TableCell Name="Cell82" Border.Lines="Right" Text="[Row#]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell68" Border.Lines="Right" Text="[stok_durum.stok_kodu]" VertAlign="Center" Font="Arial, 8pt" ColSpan="2" RowSpan="2"/>
+          <TableCell Name="Cell69" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell70" Border.Lines="Right" Text="[stok_durum.adi]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell71" Border.Lines="Right" Text="[stok_durum.birim]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell72" Border.Lines="Left, Right, Top" Text="[stok_durum.kdv]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell73" Border.Lines="Left, Right, Top" Text="[stok_durum.fiyat]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell74" Border.Lines="Left, Right, Top" Text="[stok_durum.Stok]" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="1">
+          <TableCell Name="Cell83"/>
+          <TableCell Name="Cell75"/>
+          <TableCell Name="Cell76"/>
+          <TableCell Name="Cell77"/>
+          <TableCell Name="Cell78"/>
+          <TableCell Name="Cell79"/>
+          <TableCell Name="Cell80"/>
+          <TableCell Name="Cell81"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="221.89" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

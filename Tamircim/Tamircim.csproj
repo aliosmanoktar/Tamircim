@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B46B93A-269C-4ED7-A511-C68116E0E601}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tamircim</RootNamespace>
+    <AssemblyName>Tamircim</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>
+    </TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>D:\c# Code\Tamircim\Tamircim\bin\Debug\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars">
+      <HintPath>D:\c# Code\Tamircim\Tamircim\bin\Debug\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor">
+      <HintPath>D:\c# Code\Tamircim\Tamircim\bin\Debug\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.109.2\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.109.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_ana_sayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ana_sayfa.Designer.cs">
+      <DependentUpon>frm_ana_sayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ariza_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ariza_ekle.Designer.cs">
+      <DependentUpon>frm_ariza_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cari_ekstre_yazdir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cari_ekstre_yazdir.Designer.cs">
+      <DependentUpon>frm_cari_ekstre_yazdir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cari_islem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cari_islem.Designer.cs">
+      <DependentUpon>frm_cari_islem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cari_islem_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_cari_islem_ekle.Designer.cs">
+      <DependentUpon>frm_cari_islem_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_list_cari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_list_cari.Designer.cs">
+      <DependentUpon>frm_list_cari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_list_toptanci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_list_toptanci.Designer.cs">
+      <DependentUpon>frm_list_toptanci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_list_toptanci_hareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_list_toptanci_hareket.Designer.cs">
+      <DependentUpon>frm_list_toptanci_hareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_musteri_arama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_musteri_arama.Designer.cs">
+      <DependentUpon>frm_musteri_arama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_musteri_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_musteri_ekle.Designer.cs">
+      <DependentUpon>frm_musteri_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_parca_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_parca_ekle.Designer.cs">
+      <DependentUpon>frm_parca_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_personel_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_ekle.Designer.cs">
+      <DependentUpon>frm_personel_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_personel_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_list.Designer.cs">
+      <DependentUpon>frm_personel_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_personel_ucret_tarih.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_ucret_tarih.Designer.cs">
+      <DependentUpon>frm_personel_ucret_tarih.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_servise_gelen_arac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_servise_gelen_arac.Designer.cs">
+      <DependentUpon>frm_servise_gelen_arac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_serviste_bulunan_araclar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_serviste_bulunan_araclar.Designer.cs">
+      <DependentUpon>frm_serviste_bulunan_araclar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_servis_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_servis_ekle.Designer.cs">
+      <DependentUpon>frm_servis_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_servis_odeme_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_servis_odeme_ekle.Designer.cs">
+      <DependentUpon>frm_servis_odeme_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_servis_toplam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_servis_toplam.Designer.cs">
+      <DependentUpon>frm_servis_toplam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_servis_yazdir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_servis_yazdir.Designer.cs">
+      <DependentUpon>frm_servis_yazdir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_stok_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_stok_ekle.Designer.cs">
+      <DependentUpon>frm_stok_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_stok_giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_stok_giris.Designer.cs">
+      <DependentUpon>frm_stok_giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_stok_karti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_stok_karti.Designer.cs">
+      <DependentUpon>frm_stok_karti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_tedarik_rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tedarik_rapor.Designer.cs">
+      <DependentUpon>frm_tedarik_rapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_urun_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_urun_ekle.Designer.cs">
+      <DependentUpon>frm_urun_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_personel_islemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_islemleri.Designer.cs">
+      <DependentUpon>frm_personel_islemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_personel_islem_ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personel_islem_ekle.Designer.cs">
+      <DependentUpon>frm_personel_islem_ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="print.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="siniflar.cs" />
+    <Compile Include="SQLiteConfiguration.cs" />
+    <Compile Include="veritabani.cs" />
+    <EmbeddedResource Include="frm_ana_sayfa.resx">
+      <DependentUpon>frm_ana_sayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ariza_ekle.resx">
+      <DependentUpon>frm_ariza_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cari_ekstre_yazdir.resx">
+      <DependentUpon>frm_cari_ekstre_yazdir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cari_islem.resx">
+      <DependentUpon>frm_cari_islem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_cari_islem_ekle.resx">
+      <DependentUpon>frm_cari_islem_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_list_cari.resx">
+      <DependentUpon>frm_list_cari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_list_toptanci.resx">
+      <DependentUpon>frm_list_toptanci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_list_toptanci_hareket.resx">
+      <DependentUpon>frm_list_toptanci_hareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_musteri_arama.resx">
+      <DependentUpon>frm_musteri_arama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_musteri_ekle.resx">
+      <DependentUpon>frm_musteri_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_parca_ekle.resx">
+      <DependentUpon>frm_parca_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personel_ekle.resx">
+      <DependentUpon>frm_personel_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personel_list.resx">
+      <DependentUpon>frm_personel_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personel_ucret_tarih.resx">
+      <DependentUpon>frm_personel_ucret_tarih.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_servise_gelen_arac.resx">
+      <DependentUpon>frm_servise_gelen_arac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_serviste_bulunan_araclar.resx">
+      <DependentUpon>frm_serviste_bulunan_araclar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_servis_ekle.resx">
+      <DependentUpon>frm_servis_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_servis_odeme_ekle.resx">
+      <DependentUpon>frm_servis_odeme_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_servis_toplam.resx">
+      <DependentUpon>frm_servis_toplam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_servis_yazdir.resx">
+      <DependentUpon>frm_servis_yazdir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_stok_ekle.resx">
+      <DependentUpon>frm_stok_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_stok_giris.resx">
+      <DependentUpon>frm_stok_giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_stok_karti.resx">
+      <DependentUpon>frm_stok_karti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tedarik_rapor.resx">
+      <DependentUpon>frm_tedarik_rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_urun_ekle.resx">
+      <DependentUpon>frm_urun_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personel_islemleri.resx">
+      <DependentUpon>frm_personel_islemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personel_islem_ekle.resx">
+      <DependentUpon>frm_personel_islem_ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

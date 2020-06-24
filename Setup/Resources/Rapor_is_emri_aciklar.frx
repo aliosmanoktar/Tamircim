@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/18/2018 14:48:49" ReportInfo.Modified="10/17/2018 12:11:15" ReportInfo.CreatorVersion="2014.2.1.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGsei1vLGtYNrT4uJJhjdPq1oo1EnYVuc9KuAXn208hjVarpex9KfSZmVsUxM7SlsBTvBfgqR+7L/yr9KXL+wbvHqMPFa+mUu1PcPXndbq0YqLZWeNXm7ExjXDZ5AA7lonDzPglWUPBTd9rQKLBaliiPL96Q1uqyvDJrkQYWbmoYFIm4YG2kehVewj5de/BUsww==">
+      <TableDataSource Name="sirket_bilgileri" DataType="System.Int32" Enabled="true" SelectCommand="select * from sirket bilgileri">
+        <Column Name="sirket_adi" DataType="System.String" PropName="Column"/>
+        <Column Name="telefon" DataType="System.String" PropName="Column"/>
+        <Column Name="adres" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="is_emri" DataType="System.Int32" Enabled="true" SelectCommand="select * from is_emri">
+        <Column Name="is_emri_no" DataType="System.Int32" PropName="Column"/>
+        <Column Name="arac_plaka" DataType="System.String" PropName="Column"/>
+        <Column Name="tarih" DataType="System.String" PropName="Column"/>
+        <Column Name="tutar" DataType="System.String" PropName="Column"/>
+        <Column Name="durum" Enabled="false" DataType="System.String" PropName="Column"/>
+        <Column Name="kapatilma_tarihi" Enabled="false" DataType="System.DateTime" PropName="Column"/>
+        <Column Name="name" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+      <TableDataSource Name="islemler" DataType="System.Int32" Enabled="true" SelectCommand="select * from is_emri">
+        <Column Name="acik_is_emri" Enabled="false" DataType="System.Int32" PropName="Column"/>
+        <Column Name="acilan_is_emri" Enabled="false" DataType="System.Int32" PropName="Column"/>
+        <Column Name="kapatilan_is_emri" Enabled="false" DataType="System.Int32" PropName="Column"/>
+        <Column Name="toplam" DataType="System.String" PropName="Column"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="47.25" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.sirket_adi]" HorzAlign="Center" Font="Arial, 14pt" TextFill.Color="White"/>
+      <TextObject Name="Text5" Top="47.25" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.telefon]" HorzAlign="Center" TextFill.Color="White"/>
+      <TextObject Name="Text6" Top="66.15" Width="718.2" Height="18.9" Fill.Color="1, 100, 209" Text="[sirket_bilgileri.adres]" HorzAlign="Center" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="88.3" Width="718.2" Height="175.82">
+      <TableObject Name="Table4" Top="151.2" Width="719.34" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column13" MaxWidth="567" Width="86.56"/>
+        <TableColumn Name="Column25" Width="349.65"/>
+        <TableColumn Name="Column14" Width="104.71"/>
+        <TableColumn Name="Column15" Width="95.26"/>
+        <TableColumn Name="Column16" Width="83.16"/>
+        <TableRow Name="Row12" Height="23.62">
+          <TableCell Name="Cell53" Border.Lines="Right" Text="İş Emri No" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell93" Border.Lines="Right" Text="Ünvan" VertAlign="Center"/>
+          <TableCell Name="Cell54" Border.Lines="Right" Text="Araç Plaka" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell55" Border.Lines="Right" Text="Açılma Tarih" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell56" Border.Lines="Right" Text="Tutar" HorzAlign="Justify" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="1">
+          <TableCell Name="Cell58"/>
+          <TableCell Name="Cell94"/>
+          <TableCell Name="Cell59"/>
+          <TableCell Name="Cell60"/>
+          <TableCell Name="Cell61"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text2" Left="-9.45" Top="9.45" Width="425.25" Height="56.7" Text="İş Emri Raporu" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt"/>
+      <TableObject Name="Table1" Left="529.2" Top="9.45" Width="188.98" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column23" Width="94.49"/>
+        <TableColumn Name="Column24" Width="94.49"/>
+        <TableRow Name="Row14">
+          <TableCell Name="Cell91" Border.Lines="Right" Text="Tarih"/>
+          <TableCell Name="Cell92" Text="[Date]" Format="Date" Format.Format="d"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="267.37" Width="718.2" Height="24.62" DataSource="is_emri">
+      <TableObject Name="Table2" Width="719.44" Height="24.62" Border.Lines="All">
+        <TableColumn Name="Column18" Width="27.19"/>
+        <TableColumn Name="Column8" Width="59.45"/>
+        <TableColumn Name="Column26" Width="349.65"/>
+        <TableColumn Name="Column9" Width="104.72"/>
+        <TableColumn Name="Column10" Width="95.27"/>
+        <TableColumn Name="Column11" Width="83.16"/>
+        <TableRow Name="Row10" Height="23.62">
+          <TableCell Name="Cell63" Border.Lines="Right" Text="[Row#]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell43" Border.Lines="Right" Text="[is_emri.is_emri_no]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell95" Border.Lines="Right" Text="[is_emri.name]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell44" Border.Lines="Right" Text="[is_emri.arac_plaka]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell45" Border.Lines="Right" Text="[is_emri.tarih]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell46" Border.Lines="Right" Text="[is_emri.tutar]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row11" Height="1">
+          <TableCell Name="Cell64"/>
+          <TableCell Name="Cell48"/>
+          <TableCell Name="Cell96"/>
+          <TableCell Name="Cell49"/>
+          <TableCell Name="Cell50"/>
+          <TableCell Name="Cell51"/>
+        </TableRow>
+      </TableObject>
+      <DataFooterBand Name="DataFooter1" Top="295.25" Width="718.2" Height="37.8">
+        <TextObject Name="Text3" Left="491.4" Top="9.45" Width="94.5" Height="18.9" Text="Toplam:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+        <TextObject Name="Text7" Left="595.35" Top="9.45" Width="122.85" Height="18.9" Text="[islemler.toplam]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="336.3" Width="718.2" Height="47.25"/>
+  </ReportPage>
+</Report>
